@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dorianGray"
+    tools:context=".MainActivity">
+
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id = "@+id/idPBLoading"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white"
+
+        android:layout_centerInParent="true"
+
+        android:visibility = "visible"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id = "@+id/idRLHome"
+
+        android:visibility = "gone"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/dorianGray"
+            android:id="@+id/idIVBack"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Austin, TX"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            android:padding="20dp"
+            android:textSize="35sp"
+            android:id="@+id/idTVCityName"
+            />
+
+        <!--Removed Section for city text box -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idTVTemperature"
+            android:layout_below="@id/idTVCityName"
+            android:layout_margin="100dp"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="23"
+            android:textColor="@color/white"
+            android:textSize="70dp"
+            />
+
+        <ImageView
+            android:id="@+id/idIVIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/idTVCityName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="339dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/idTVCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idIVIcon"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="weatherConditions"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/idIVWindSpeedIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/idTVCondition"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="463dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/wind" />
+
+        <TextView
+            android:id="@+id/idTVWindSpeedPrime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idIVWindSpeedIcon"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Windy"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/idIVHumidIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/idTVCondition"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="463dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/humidity" />
+
+        <TextView
+            android:id="@+id/idTVHumidityPrime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idIVWindSpeedIcon"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginEnd="49dp"
+            android:layout_marginBottom="10dp"
+            android:text="Humid"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="10dp"
+            android:text="Week's Weather Forecast"
+            android:textColor="@color/white"
+            android:layout_above="@id/idRecycleWeather"
+            android:textStyle="bold"
+            />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idRecycleWeather"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
